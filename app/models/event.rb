@@ -1,15 +1,16 @@
 class Event < ApplicationRecord
 
   belongs_to :administrator, class_name: 'User'
-  has_many: :attendances
-  has_many: :attendees, through: :attendances
+  has_many :attendances
+  has_many :attendees, through: :attendances
 
+  # validations -------------------------------
   validates :start_date,
     presence: true
 
   validate :no_past_start_date
   def no_past_start_date
-    if @start_date < Time.now
+    if self.start_date < Time.now
       errors.add("on ne peut pas créer un évènement dans le turfu!")
     end
   end
@@ -19,7 +20,7 @@ class Event < ApplicationRecord
 
   validate :duration_modulo_5
   def duration_modulo_5
-    if !(@duration % 5 == 0 && @duration >= 5)
+    if !(self.duration % 5 == 0 && self.duration >= 5)
       errors.add("doit être un multiple de 5")
     end
   end
