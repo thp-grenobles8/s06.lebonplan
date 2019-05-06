@@ -7,7 +7,11 @@ ruby '2.5.1'
 gem 'rename' #pour changer le nom de l'app
 gem 'faker'
 gem 'table_print'
+gem 'dotenv-rails'
 
+group :development do
+  gem 'letter_opener'
+end
 
 
 
