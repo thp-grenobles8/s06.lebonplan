@@ -11,4 +11,15 @@ class UserMailer < ApplicationMailer
     # c'est cet appel à mail() qui permet d'envoyer l’e-mail en définissant destinataire et sujet.
     mail(to: @user.email, subject: 'Bienvenue chez nous !')
   end
+
+  def attendance_email(attendance)
+    @attendance = attendance
+    @user = @attendance.attendee
+    @url = 'http://zebonplan.herokuapp.com/login'
+    mail(
+      to: @user.email,
+      subject: "Tu as rejoins l'évenement #{
+        @attendance.event.title
+      } !")
+  end
 end
