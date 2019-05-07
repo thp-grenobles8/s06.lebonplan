@@ -8,7 +8,7 @@ privé de noms, ou tout a déjà été pris, et c'est une catastrophe
 
 Mes choix esthétiques sont indiscutables,
 ce site a une apparence à la fois visionnaire
-et profondément encrée dans nos racines communes.
+et profondément ancrée dans nos racines communes.
 
 ## use
 
