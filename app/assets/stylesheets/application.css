@@ -13,3 +13,60 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 100px;
+  background: repeating-linear-gradient(
+    90deg,
+    transparent,
+    #e0e0e0 1px,
+    transparent 3px,
+    transparent 12px
+  ), repeating-linear-gradient(
+    0deg,
+    transparent,
+    #e0e0e0 1px,
+    transparent 3px,
+    transparent 11px
+  );
+  color: #28A;
+}
+
+.jumbotron {
+  background: #fff !important;
+  box-shadow: 2px 2px 3px #222 !important;
+  margin: 1em 0;
+}
+
+header {
+  background: linear-gradient(45deg, #F5C 5%, #F85, #FC0, #8FA);
+}
+header a {
+  color: #FFF;
+  text-shadow: 0 0 5px #222;
+}
+header a:hover {
+  text-shadow: 0 0 0;
+}
+header .dropdown-menu a {
+  color: #28A;
+  font-weight: bold;
+  text-shadow: 0 0 0;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: repeating-linear-gradient(
+    -45deg,
+    #ccc,
+    #fff 1px,
+    #ccc 3px,
+    #ccc 12px
+  );
+  text-align: center;
+  border-radius: 1em 2em 3em 5em;
+}

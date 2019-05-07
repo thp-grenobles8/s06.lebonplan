@@ -16,11 +16,13 @@ puts "... DB deleted"
 
 puts 'USERS -----------------------'
 20.times {
-  u = User.create!(
-    email: 'thp-grenoble-s8@yopmail.com',
+  name = Faker::Games::Pokemon.name
+  u = User.create(
+    email: "#{name}-thp-grenoble-s8@yopmail.com",
     encrypted_password: 'password',
     description: 'Je suis un grec arménien, ...',
-    name: Faker::Games::Pokemon.name
+    name: name,
+    password: 'password'
   )
   puts "new user #{u.name}"
 }
