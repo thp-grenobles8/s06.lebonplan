@@ -10,8 +10,8 @@ class Event < ApplicationRecord
 
   validate :no_past_start_date
   def no_past_start_date
-    if self.start_date < Time.now
-      errors.add("on ne peut pas créer un évènement dans le turfu!")
+    if self.start_date && self.start_date < Time.now
+      errors.add(:start_date,"on ne peut pas créer un évènement dans le turfu!")
     end
   end
 
@@ -21,7 +21,7 @@ class Event < ApplicationRecord
   validate :duration_modulo_5
   def duration_modulo_5
     if !(self.duration % 5 == 0 && self.duration >= 5)
-      errors.add("doit être un multiple de 5")
+      errors.add(:duration, "doit être un multiple de 5")
     end
   end
 

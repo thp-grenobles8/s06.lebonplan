@@ -24,3 +24,12 @@
   <% end %>
 
 </div>
+
+<div class="jumbotron">
+  <h3>Ses évènements :</h3>
+</div>
+<div class="card-columns">
+<% @user.admin_events.each do |e| %>
+  <%= render partial: 'events/card', locals: {event: e} %>
+<% end %>
+</div>

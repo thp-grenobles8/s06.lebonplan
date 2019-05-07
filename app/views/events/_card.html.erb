@@ -1,0 +1,8 @@
+
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title"><%= event.title %></h4>
+      <%= render partial: 'events/infos', locals: {event: event, full: false} %>
+      <%= link_to "Détails", event_path(event.id), class: "btn btn-info" %>
+    </div>
+  </div>

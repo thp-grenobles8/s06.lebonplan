@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, only: [:show, :edit, :update]
+
   def show
     @user = User.find(params[:id])
+    if @user != current_user
+      flash[:danger] = "Tu ne peux pas aller sur la page d'autre utilisateurs!"
+      redirect_to :root
+    end
   end
 
   def index

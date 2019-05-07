@@ -4,12 +4,6 @@
 
 <div class="card-columns">
 <% @events.each do |e| %>
-  <div class="card">
-    <div class="card-body">
-      <h4 class="card-title"><%= e.title %></h4>
-      <%= render partial: 'events/infos', locals: {event: e, full: false} %>
-      <%= link_to "Détails", event_path(e.id), class: "btn btn-info" %>
-    </div>
-  </div>
+  <%= render partial: 'events/card', locals: {event: e} %>
 <% end %>
 </div>
