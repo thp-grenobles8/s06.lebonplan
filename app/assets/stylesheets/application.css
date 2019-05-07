@@ -39,6 +39,15 @@ body {
   box-shadow: 2px 2px 3px #222 !important;
   margin: 1em 0;
 }
+.alert {
+  background: #AAF;
+  background: rgba(180,180,255,0.9);
+  border: 2px solid #88F;
+}
+.highlight {
+  color: #80D;
+  font-weight: bold;
+}
 
 header {
   background: linear-gradient(45deg, #F5C 5%, #F85, #FC0, #8FA);

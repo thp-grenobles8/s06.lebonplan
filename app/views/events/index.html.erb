@@ -5,17 +5,11 @@
 <div class="card-columns">
 <% @events.each do |e| %>
   <div class="card">
-    <h4><%= e.title %></h4>
-    <dl class="">
-      <dt>Début</dt>
-        <dd><%= e.start_date %></dd>
-      <dt>Durée</dt>
-        <dd><%= e.duration %> mn</dd>
-      <dt>Prix</dt>
-        <dd><%= e.price %>€</dd>
-      <dt>Organisateur</dt>
-        <dd><%= e.administrator.name %></dd>
-    </dl>
+    <div class="card-body">
+      <h4 class="card-title"><%= e.title %></h4>
+      <%= render partial: 'events/infos', locals: {event: e, full: false} %>
+      <%= link_to "Détails", event_path(e.id), class: "btn btn-info" %>
+    </div>
   </div>
 <% end %>
 </div>

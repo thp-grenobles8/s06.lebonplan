@@ -1,0 +1,17 @@
+
+<dl class="">
+  <dt>Où ?</dt>
+    <dd class="highlight"><%= event.location %></dd>
+  <dt>Quand ?</dt>
+    <dd class="highlight"><%= event.start_date.strftime("%H:%M le %d/%m/%y") %></dd>
+  <% if full %>
+    <dt>Durée</dt>
+      <dd class="highlight"><%= event.duration %> mn</dd>
+    <dt>Prix</dt>
+      <dd class="highlight"><%= event.price %>€</dd>
+    <dt>Organisateur</dt>
+      <dd class="highlight">
+        <%= link_to event.administrator.name, user_path(event.administrator_id) %>
+      </dd>
+  <% end %>
+</dl>
