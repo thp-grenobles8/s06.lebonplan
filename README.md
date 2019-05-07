@@ -1,24 +1,31 @@
-# README
+# ZE BON PLAN
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+pourquoi ZE ? car lebonplan.herokuapp était déjà pris ...
+Plus le temps passe et plus on se dirige vers un internet
+privé de noms, ou tout a déjà été pris, et c'est une catastrophe
 
-Things you may want to cover:
+## use
 
-* Ruby version
+Le site est visible sur [HEROKU zebonplan.herokuapp.com](https://zebonplan.herokuapp.com)
 
-* System dependencies
+Si tu veux l'essayer en local,
+- un petit `git clone https://github.com/thp-grenobles8/s06.zebonplan`
+- un petit `bundle install` des familles
+- un petit `rails db:create`, après un `rails db:drop` si la base existe déjà
+(ce qui m'étonnerai, personne a choisi un nom aussi cool)
+- `rails db:migrate`
+- `rails db:seed` pour avoir de la data
+- `rails s` pour lancer le serveur
+- et rendez-vous sur le [SITE (localhost:3000)](localhost:3000)
 
-* Configuration
+## la team
 
-* Database creation
+**Team Grenoble**,
+on bosse en presque-peer-programming,
+chacun son projet et on s'entraide
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Guillaume Silvent @gui3 (c'est mon projet :D)
+- Anis Bouhouche @Anis
+- Tristan Morin @Tristan M.
+- Clément Coquille @Clément Coquille
+- Florian Chazot @Florian Chazot
