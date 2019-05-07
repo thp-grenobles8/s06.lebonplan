@@ -4,6 +4,11 @@ class Event < ApplicationRecord
   has_many :attendances
   has_many :attendees, through: :attendances
 
+  def end_date
+    self.start_date + self.duration.minutes
+  end
+
+
   # validations -------------------------------
   validates :start_date,
     presence: true

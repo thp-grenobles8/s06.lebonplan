@@ -3,7 +3,7 @@
 </div>
 
 <div class="card-columns">
-<% @events.each do |e| %>
+<% @events.sort_by{|e| e.created_at}.reverse.each do |e| %>
   <%= render partial: 'events/card', locals: {event: e} %>
 <% end %>
 </div>

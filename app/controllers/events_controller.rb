@@ -8,6 +8,10 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
+  def edit
+    @event = {} # pour préremplir de rien
+  end
+
   def create
     @event = Event.new(
       title: params[:title],
@@ -20,9 +24,11 @@ class EventsController < ApplicationController
     )
     if @event.save
       flash[:success] = "Ton évènement a été ajouté !"
-      redirect_to :root
+      redirect_to event_path(@event.id)
     else
-      flash[:danger] = "Ton évènement n'est pas valide !"
+      flash[:danger] = "Ton évènement n'est pas valide ! #{
+        @event.errors.full_messages.to_s
+      }"
       render :new
     end
   end

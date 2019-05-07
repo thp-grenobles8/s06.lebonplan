@@ -7,11 +7,26 @@
   <% if full %>
     <dt>Durée</dt>
       <dd class="highlight"><%= event.duration %> mn</dd>
+    <dt>Donc jusqu'à</dt>
+      <dd class="highlight"><%= event.end_date.strftime("%H:%M le %d/%m/%y") %></dd>
     <dt>Prix</dt>
       <dd class="highlight"><%= event.price %>€</dd>
+
+    <dt>Nombre de participants</dt>
+      <dd class="highlight"><%= event.attendees.count %></dd>
+
+    <dt>Liste des participants :</dt>
+      <dd>
+        <ul>
+          <% event.attendees.each do |a| %>
+            <li><%= link_to a.email, user_path(a.id) %></li>
+          <% end %>
+        </ul>
+      </dd>
+
     <dt>Organisateur</dt>
       <dd class="highlight">
-        <%= link_to event.administrator.name, user_path(event.administrator_id) %>
+        <%= link_to event.administrator.email, user_path(event.administrator_id) %>
       </dd>
   <% end %>
 </dl>
